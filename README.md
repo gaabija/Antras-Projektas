@@ -15,7 +15,14 @@ C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 - Atlikta eksperimentinę analizę priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3 su 100000 failu
 
-
+| N  |             | 100000 |
+|----|-------------|--------|
+| O1 | nuskaitymas |        |
+|    | grupavimas  |        |
+| O2 | nuskaitymas |        |
+|    | grupavimas  |        |
+| O3 | nuskaitymas |        |
+|    | grupavimas  |        |
 
 ### Naudojimas:
 Paleidus programą bus prašoma:
