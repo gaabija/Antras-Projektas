@@ -4,10 +4,17 @@ C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 Šioje versijoje nauja: 
 - Struktūros Irasas pagrindu sukurta Studentas klasė
-
 - Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
 
-- Atlikta eksperimentinę analizę priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3
+|             | N      | 100000    | 1000000   |
+|-------------|--------|-----------|-----------|
+| nuskaitymas | class  | 0.47012 s | 2.52774 s |
+| grupavimas  |        | 0.39141 s | 3.62351 s |
+| nuskaitymas | struct | 0.41902 s | 2.69022 s |
+| grupavimas  |        | 0.23015 s | 2.50912 s |
+
+- Atlikta eksperimentinę analizę priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3 su 100000 failu
+
 
 
 ### Naudojimas:
