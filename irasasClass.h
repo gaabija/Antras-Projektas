@@ -35,7 +35,27 @@ public:
     double Vidurkis();
     double Mediana();
     
-      
+    ~Studentas() {}; //destruktorius
+
+        Studentas(const Studentas &laikinas) // copy konstruktorius
+   {
+        vardas_ = laikinas.vardas_;
+        pavarde_ = laikinas.pavarde_;
+        pazymiai_ = laikinas.pazymiai_;
+        egzas_ = laikinas.egzas_;
+    }
+
+    void swap(Studentas & kitas) {
+        ::swap(vardas_, kitas.vardas_);
+        ::swap(pavarde_, kitas.pavarde_);
+        ::swap(pazymiai_, kitas.pazymiai_);
+        ::swap(egzas_, kitas.egzas_);
+    }
+    // copy assignment konstruktorius
+    Studentas & operator = (Studentas kitas){
+        swap(kitas);
+        return *this;
+    }
       
 };
 
