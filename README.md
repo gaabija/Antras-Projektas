@@ -58,7 +58,3 @@ Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausi�
 
 
 
-
-
-
-
