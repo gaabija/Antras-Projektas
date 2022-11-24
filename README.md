@@ -1,28 +1,9 @@
 # Pirmas-Projektas
-## V 1.1
+## V 1.2
 C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 Šioje versijoje nauja: 
-- Struktūros Irasas pagrindu sukurta Studentas klasė
-- Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
-
-|             | N      | 100000    | 1000000   |
-|-------------|--------|-----------|-----------|
-| nuskaitymas | class  | 0.47012 s | 2.52774 s |
-| grupavimas  |        | 0.39141 s | 3.62351 s |
-| nuskaitymas | struct | 0.41902 s | 2.69022 s |
-| grupavimas  |        | 0.23015 s | 2.50912 s |
-
-- Atlikta eksperimentinę analizę priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3 su 100000 failu
-
-| N  |             | 100000 |
-|----|-------------|--------|
-| O1 | nuskaitymas |        |
-|    | grupavimas  |        |
-| O2 | nuskaitymas |        |
-|    | grupavimas  |        |
-| O3 | nuskaitymas |        |
-|    | grupavimas  |        |
+- Realizuota  "Rule of three"  turimai Studentas klasei
 
 ### Naudojimas:
 Paleidus programą bus prašoma:
@@ -63,8 +44,15 @@ Jei pasirenkate negeneruoti failo prašoma:
 |        | Grupavimas  | 0.0002076 s | 0.0100214 s | 0.162039 s  | 1.24929 s  | 12.3308 s |
 
 
+### 1.1 
+Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
 
-
+|             | N      | 100000    | 1000000   |
+|-------------|--------|-----------|-----------|
+| nuskaitymas | class  | 0.47012 s | 2.52774 s |
+| grupavimas  |        | 0.39141 s | 3.62351 s |
+| nuskaitymas | struct | 0.41902 s | 2.69022 s |
+| grupavimas  |        | 0.23015 s | 2.50912 s |
 
 
 
