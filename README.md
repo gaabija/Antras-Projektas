@@ -1,14 +1,9 @@
 # Pirmas-Projektas
-## V 1.1
+## V 1.2
 C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 Šioje versijoje nauja: 
-- Struktūros Irasas pagrindu sukurta Studentas klasė
-
-- Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
-
-- Atlikta eksperimentinę analizę priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3
-
+- Realizuota  "Rule of three"  turimai Studentas klasei
 
 ### Naudojimas:
 Paleidus programą bus prašoma:
