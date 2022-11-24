@@ -1,5 +1,5 @@
-#ifndef FUNKCIJOS_H
-#define FUNKCIJOS_H
+#ifndef FUNKCIJOSSTRUCT_H
+#define FUNKCIJOSSTRUCT_H
 
 #include <iostream>
 #include <string>
@@ -39,7 +39,7 @@ struct Irasas {
 };
 
 int SkIvedimas();
-void Pagalbine();
+void Pagalbine(char ar, char budasIsvesti,  int nStudentu);
 void Duomenys(vector < Irasas > studentai);
 void Duomenys(vector < Irasas > studentai);
 void NaudotojoSuvedimas(Irasas & temp);
@@ -57,13 +57,5 @@ void GrupavimasVector(int nStudentu, vector < Irasas > & studentai,
 void SpausdinimasVector(int nStudentu,
  vector < Irasas > & geresnioBalo,
      vector < Irasas > & zemesnioBalo);
-
-void FailoDuomenuGavimasList(list < Irasas > & studentai, int nStudentu);
-void GrupavimasList(int nStudentu, list < Irasas > & studentai,
-  list < Irasas > & geresnioBalo, list < Irasas > & zemesnioBalo);
-void SpausdinimasList(int nStudentu,
-   list < Irasas > & geresnioBalo,
-     list < Irasas > & zemesnioBalo);
-void SkaiciavimasList(int nStudentu, list < Irasas > & studentai,char budasIsvesti);
 void SkaiciavimasVector(int nStudentu, vector < Irasas > & studentai,char budasIsvesti);
 #endif
