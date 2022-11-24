@@ -1,10 +1,10 @@
-#include "funkcijos.h"
+#include "funkcijosStruct.h"
 
 void Duomenys(vector < Irasas > studentai) {
   int nStudentu;
   char budasIsvesti;
   cout << "Iveskite studentu skaiciu: ";
-  cin >> nStudentu;
+  nStudentu= SkIvedimas();
   for (int i = 0; i < nStudentu; i++) {
     Irasas st;
     NefailoDuomenuGavimas(st);
@@ -131,123 +131,26 @@ double Mediana(Irasas temp) {
   return mediana;
 }
 
-void Pagalbine() {
-  cout << "Ar norite kad galutinis balas butu isvedamas pagal viduki? 'v' Ar norite kad butu isvedamas pagal mediana? 'm' )  ";
-  char arVidurkis;
-  char budasIsvesti;
-  string name;
-  while (true) {
-    cin >> arVidurkis;
-    arVidurkis = tolower(arVidurkis);
-    if (arVidurkis != 'v' && arVidurkis != 'm') {
-      cout << "Iveskite v arba m raidę: ";
-    } else break;
-  }
-  if (arVidurkis == 'v') {
-    budasIsvesti = 'v';
-  } else if (arVidurkis == 'm') {
-    budasIsvesti = 'm';
-  }
-  cout << "Iveskite failo studentu skaičių: "<<endl;
-  int nStudentu;
-  nStudentu= SkIvedimas();
- 
-  vector < Irasas > studentai;
+void Pagalbine(char ar, char budasIsvesti,  int nStudentu) {
+
+    vector < Irasas > studentai;
   vector < Irasas > geresnioBalo;
   vector < Irasas > zemesnioBalo;
 
-  list < Irasas > studentaiLIST;
-  list < Irasas > geresnioBaloLIST;
-  list < Irasas > zemesnioBaloLIST;
-
-  cout << "Ar norite nuskaityti faila? 'n' Ar norite ji sugeneruoti? 'g' )  ";
-  char ar;
-  while (true) {
-    cin >> ar;
-    ar = tolower(ar);
-    if (ar != 'n' && ar != 'g') {
-      cout << "Iveskite n arba g raidę: ";
-    } else break;
-  }
-  if (ar == 'g') {
-    cout << "Iveskite studento pazymiu skaičių: " << endl;
-    int nPazymiu;
-    nPazymiu = SkIvedimas();
-
-      DuomenuGeneravimas(nStudentu, nPazymiu);
-     FailoDuomenuGavimasVector(studentai, nStudentu);
-     SkaiciavimasVector(nStudentu, studentai, budasIsvesti);
-      GrupavimasVector(nStudentu, studentai, geresnioBalo, zemesnioBalo);
-      SpausdinimasVector(nStudentu, geresnioBalo, zemesnioBalo);
-
-      FailoDuomenuGavimasList(studentaiLIST, nStudentu);
-      SkaiciavimasList(nStudentu, studentaiLIST, budasIsvesti);
-      GrupavimasList(nStudentu, studentaiLIST, geresnioBaloLIST, zemesnioBaloLIST);
-      SpausdinimasList(nStudentu, geresnioBaloLIST, zemesnioBaloLIST);
-
-      studentaiLIST.clear();
-      geresnioBaloLIST.clear();
-      zemesnioBaloLIST.clear();
-      studentai.clear();
-      geresnioBalo.clear();
-      zemesnioBalo.clear();
-      cout << endl;
-    
-  } else if (ar == 'n') {
-   
       FailoDuomenuGavimasVector(studentai, nStudentu);
      SkaiciavimasVector(nStudentu, studentai, budasIsvesti);
       GrupavimasVector(nStudentu, studentai, geresnioBalo, zemesnioBalo);
       SpausdinimasVector(nStudentu, geresnioBalo, zemesnioBalo);
 
-      FailoDuomenuGavimasList(studentaiLIST, nStudentu);
-      SkaiciavimasList(nStudentu, studentaiLIST, budasIsvesti);
-      GrupavimasList(nStudentu, studentaiLIST, geresnioBaloLIST, zemesnioBaloLIST);
-      SpausdinimasList(nStudentu, geresnioBaloLIST, zemesnioBaloLIST);
-
-      studentaiLIST.clear();
-      geresnioBaloLIST.clear();
-      zemesnioBaloLIST.clear();
       studentai.clear();
       geresnioBalo.clear();
       zemesnioBalo.clear();
       cout << endl;
     
   }
-}
 
-void FailoDuomenuGavimasList(list < Irasas > & studentai, int nStudentu) {
-  auto start = std::chrono::high_resolution_clock::now();
-  auto startas = start;
-  string name = "Studentai" + to_string(nStudentu) + ".txt";
 
-  ifstream fd;
-  stringstream buffer;
-  fd.open(name);
-  buffer << fd.rdbuf();
-  fd.close();
-  string eil;
 
-  while (getline(buffer, eil)) {
-    Irasas studentas;
-    stringstream fd(eil);
-    fd >> studentas.vardas;
-    fd >> studentas.pavarde;
-    int pazymys;
-    while (fd >> pazymys) {
-      studentas.pazymiai.push_back(pazymys);
-    }
-    studentas.egzas = studentas.pazymiai.back();
-    studentas.pazymiai.pop_back();
-
-    studentai.push_back(studentas);
-  }
-
-  auto end = std::chrono::high_resolution_clock::now();
-  std::chrono::duration < double > diff = end - start;
-  cout << to_string(nStudentu) << " irasu nuskaitymo laikas i List: " << diff.count() << " s\n";
-
-}
 void SkaiciavimasVector(int nStudentu, vector < Irasas > & studentai, char budasIsvesti){
   vector < Irasas > ::iterator it;
   if (budasIsvesti == 'm') {
@@ -261,77 +164,6 @@ void SkaiciavimasVector(int nStudentu, vector < Irasas > & studentai, char budas
         it -> egzas * 0.6;
     }
   }
-}
-void SkaiciavimasList(int nStudentu, list < Irasas > & studentai,char budasIsvesti){
-  list < Irasas > ::iterator it;
-  if (budasIsvesti == 'm') {
-    for (it = studentai.begin(); it != studentai.end(); ++it) {
-      it -> galut = Mediana( * it) * 0.4 +
-        it -> egzas * 0.6;
-    }
-  } else if (budasIsvesti == 'v') {
-    for (it = studentai.begin(); it != studentai.end(); ++it) {
-      it -> galut = Vidurkis( * it) * 0.4 +
-        it -> egzas * 0.6;
-    }
-  }
-}
-void GrupavimasList(int nStudentu, list < Irasas > & studentai,
-  list < Irasas > & geresnioBalo, list < Irasas > & zemesnioBalo) {
-  auto start = std::chrono::high_resolution_clock::now();
-  auto startas = start;
-  list < Irasas > ::iterator it;
-  for (it = studentai.begin(); it != studentai.end(); ++it) {
-    if (it -> galut < 5.00) {
-      Irasas zemesnis;
-      zemesnis.vardas = it -> vardas;
-      zemesnis.pavarde = it -> pavarde;
-      zemesnis.galut = it -> galut;
-      zemesnioBalo.push_back(zemesnis);
-
-    } else {
-      Irasas geresnis;
-      geresnis.vardas = it -> vardas;
-      geresnis.pavarde = it -> pavarde;
-      geresnis.galut = it -> galut;
-      geresnioBalo.push_back(geresnis);
-    }
-  }
-  geresnioBalo.sort([](const Irasas & f,
-    const Irasas & s) {
-    return f.vardas < s.vardas;
-  });
-  zemesnioBalo.sort([](const Irasas & f,
-    const Irasas & s) {
-    return f.vardas < s.vardas;
-  });
-
-  auto end = std::chrono::high_resolution_clock::now();
-  std::chrono::duration < double > diff = end - start;
-  cout << to_string(nStudentu) << " irasu grupavimo laikas su List: " << diff.count() << " s\n";
-}
-
-void SpausdinimasList(int nStudentu,
-  list < Irasas > & geresnioBalo,
-  list < Irasas > & zemesnioBalo) {
-
-  string zemesniuName = "ZemesnioBalo" + to_string(nStudentu) + ".txt";
-  ofstream zemesn(zemesniuName);
-  string geresniuName = "GeresnioBalo" + to_string(nStudentu) + ".txt";
-  ofstream geresn(geresniuName);
-
-  for (Irasas zemesnis: zemesnioBalo) {
-    zemesn << zemesnis.vardas << " " <<
-      zemesnis.pavarde << " " << fixed << setprecision(2) <<
-      zemesnis.galut << endl;
-  }
-  for (Irasas geresnis: geresnioBalo) {
-    geresn << geresnis.vardas << " " <<
-      geresnis.pavarde << " " << fixed << setprecision(2) <<
-      geresnis.galut << endl;
-  }
-  zemesnioBalo.clear();
-  geresnioBalo.clear();
 }
 
 void DuomenuGeneravimas(int & nStudentu, int & nPazymiu) {
@@ -376,7 +208,7 @@ void FailoDuomenuGavimasVector(vector < Irasas > & studentai, int nStudentu) {
 
   auto end = std::chrono::high_resolution_clock::now();
   std::chrono::duration < double > diff = end - start;
-  cout << to_string(nStudentu) << " irasu nuskaitymo laikas i Vector: " << diff.count() << " s\n";
+  cout << to_string(nStudentu) << " irasu nuskaitymo laikas i Vector su Struct: " << diff.count() << " s\n";
 
 }
 
@@ -407,7 +239,7 @@ void GrupavimasVector(int nStudentu, vector < Irasas > & studentai,
 
   auto end = std::chrono::high_resolution_clock::now();
   std::chrono::duration < double > diff = end - start;
-  cout << to_string(nStudentu) << " irasu grupavimo laikas su Vector: " << diff.count() << " s\n";
+  cout << to_string(nStudentu) << " irasu grupavimo laikas su Vector su Struct: " << diff.count() << " s\n";
 }
 
 void SpausdinimasVector(int nStudentu,
