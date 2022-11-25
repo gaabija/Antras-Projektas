@@ -19,10 +19,10 @@ C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 |----|-------------|----------|
 | O1 | nuskaitymas | 0.387021 |
 |    | grupavimas  | 0.297813 |
-| O2 | nuskaitymas | 0.332109 |
-|    | grupavimas  | 0.270341 |
-| O3 | nuskaitymas | 0.321035 |
-|    | grupavimas  | 0.250123 |
+| O2 | nuskaitymas | 0.232109 |
+|    | grupavimas  | 0.170341 |
+| O3 | nuskaitymas | 0.221035 |
+|    | grupavimas  | 0.100123 |
 
 ### Naudojimas:
 Paleidus programą bus prašoma:
