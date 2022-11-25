@@ -1,20 +1,5 @@
 #include "irasasClass.h"
 
-Studentas::Studentas(ifstream& fd)
-{
-    readStudentas(fd);
-}
-
-void Studentas::readStudentas(ifstream &fd) {
-    fd >> this->vardas_ >> this->pavarde_;
-    this->pazymiai_.reserve(10);
-  int pazymys;
-    while (fd >> pazymys) {
-      this->pazymiai_.push_back(pazymys);
-    }
-    this-> egzas_ = this->pazymiai_.back();
-    this->pazymiai_.pop_back();
-  }
 
 void Studentas::Galutinis(char budasIsvesti) {
   double galutinis;
