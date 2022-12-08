@@ -11,9 +11,18 @@
 #include <chrono>
 using namespace std;
 
-class Studentas {
-private:
+class Zmogus {
+protected:
     string vardas_, pavarde_;
+public:
+    Zmogus() {};
+    ~Zmogus() {};
+    virtual string vardas() const = 0;
+    virtual string pavarde() const = 0;
+};
+
+class Studentas : public Zmogus {
+private:
     vector<int> pazymiai_;
     int egzas_;
     double galut_;
