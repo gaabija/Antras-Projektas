@@ -25,13 +25,7 @@ Jei pasirenkate negeneruoti failo prašoma:
     - Leidžiama tik 'v' ar 'm' renkantis vidurkį/medianą
     - Leidžiama tik 'a' ar 'p' renkantis naudotojo/atsitiktinį pažymių suvedimą
 
-### Rezultato pavyzdys:
-- Ivedus pažymius rankomis
-<img width="253" alt="image" src="https://user-images.githubusercontent.com/113300842/195715872-0b732e41-bbe9-495c-9c1b-ef1e6eda8270.png">
-- Greičio analizė generuojant failą v.03 versijoje tik su vektoriais
-<img width="353" alt="image" src="https://user-images.githubusercontent.com/113300842/195781990-b280cf2b-9496-40f9-a0a5-23003cd3f300.png">
-
-### v0.4 Spartos analizė
+### Sparta analizė
 - AMD Ryzen 7 4800U with Radeon Graphics 1.80 GHz procesorius
 - 16,0 GB RAM
 - 1 TB SSD
@@ -43,9 +37,7 @@ Jei pasirenkate negeneruoti failo prašoma:
 | List   | Nuskaitymas | 0.0009997 s | 0.0380274 s | 0.437175 s  | 2.74462 s  | 23.7884 s |
 |        | Grupavimas  | 0.0002076 s | 0.0100214 s | 0.162039 s  | 1.24929 s  | 12.3308 s |
 
-
-### 1.1 
-Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
+Sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
 
 |             | N      | 100000    | 1000000   |
 |-------------|--------|-----------|-----------|
@@ -54,7 +46,38 @@ Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausi�
 | nuskaitymas | struct | 0.41902 s | 2.69022 s |
 | grupavimas  |        | 0.23015 s | 2.50912 s |
 
-
+## Versijos:
+### v2.0
+- Sukurkite dokumentaciją panaudojant Doxygen
+### v1.5
+- Sukurta Žmogus bazinė klasė iš kurios išvedama Studentas klasė
+### v1.2
+- Realizuota "Rule of three" turimai Studentas klasei
+### v1.1
+- Struktūros Irasas pagrindu sukurta Studentas klasė
+- Išmatuota sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo strategiją bei 100000 ir 1000000 dydžio failus
+### v1.0
+- paruošta cmake CMakeLists.txt įdiegimo instrukcija
+- optimizuoti algoritmai vektoriaus studentų dalijimo procedūrai
+- išmatuota programos veikimo sparta priklausomai nuo studentų dalijimo į dvi kategorijas strategijos
+### v0.4
+- Galimybė dirbti ne tik su vietoje generuojamu failu, bet ir su jau esančio failo nuskaitymu
+- Naudojamas ne tik vector bet ir list tipo konteineris studentų duomenims saugoti
+- Atliekama programos veikimo greičio (spartos) analizė vector ir list konteineriams:
+    - duomenų nuskaitymui iš failų
+    - studentų grupavimui į dvi grupes/kategorijas (Geresnio balo (>=5) ir žemesnio balo (<5) )
+### v0.3
+- Galimybė generuoti norimo dydžio studentų įrašų failus
+- Studentų įrašai surūšiuojami pagal balą į dvi kategorijas ir išvedami į du skirtingus failus
+- Atliekama programos veikimo greičio (spartos) analizė:
+    - failų kūrimui
+    - duomenų nuskaitymui iš failų
+    - studentų rūšiavimui į dvi grupes/kategorijas
+    - studentų išvedimui į du naujus failus
+### v0.2
+v.01 papildytas galimybe duomenis imti iš nuskaitomo failo, pridėtas klaidos jei failas neatsidarė sugavimas, failas išskaidytas į .h bei .cpp failus, lengvesniam skaitomumui.
+### v0.1
+Šioje versijoje yra 2 .cpp failai - masyvo bei vektoriaus realizacijos studento namų darbų pažymiams saugoti.
 
 
 
