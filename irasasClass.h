@@ -11,6 +11,7 @@
 #include <chrono>
 using namespace std;
 
+/// @brief Abstrakti bazine klase su kintamaisiais vardas pavarde, reikalinga Studento klasei isvest
 class Zmogus {
 protected:
     string vardas_, pavarde_;
@@ -21,15 +22,17 @@ public:
     virtual string pavarde() const = 0;
 };
 
+
+/// @brief Klase paveldinti vardo ir pavardes kintamuosius Zmogus klases
 class Studentas : public Zmogus {
 private:
     vector<int> pazymiai_;
     int egzas_;
     double galut_;
 public:
-    Studentas() : egzas_(0) {};
+    Studentas() : egzas_(0) {}; // default konstruktorius
     Studentas(ifstream& fd);
-    string vardas() const { return vardas_;}
+    string vardas() const { return vardas_;} 
     void setVardas(string &v) { vardas_ = v; }
     string pavarde() const { return pavarde_;}
     void setPavarde(string &p) { pavarde_ = p; }
