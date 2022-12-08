@@ -1,4 +1,4 @@
-#include "funkcijosStruct.h"
+
 #include "funkcijosClass.h"
 #include "irasasClass.h"
 
@@ -52,24 +52,7 @@ int main() {
     nPazymiu = SkIvedimasClass();
     DuomenuGeneravimasClass(nStudentu, nPazymiu);
   }
-
-
-    auto start1 = std::chrono::high_resolution_clock::now();
-    auto startas1 = start1;
     PagalbineClass(ar, budasIsvesti, nStudentu);
-        auto end1 = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> diff1 = end1 - start1;
-  cout << to_string(nStudentu)
-       << " sparta su Class: " << diff1.count() << " s\n";
-    
-    auto start = std::chrono::high_resolution_clock::now();
-    auto startas = start;
-    Pagalbine(ar, budasIsvesti, nStudentu);
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> diff = end - start;
-    cout << to_string(nStudentu)<< " sparta su Struct: " << diff.count() << " s\n"<<endl;
-    
-
     
   } else if (arGeneruoti == 'n') {
     
@@ -81,4 +64,3 @@ int main() {
 
   return 0;
 }
-
