@@ -1,9 +1,9 @@
 # Pirmas-Projektas
-## V 1.2
+## V 1.5
 C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 Šioje versijoje nauja: 
-- Realizuota  "Rule of three"  turimai Studentas klasei
+- Sukurta Žmogus bazinė klasė iš kurios išvedama Studentas klasė
 
 ### Naudojimas:
 Paleidus programą bus prašoma:
