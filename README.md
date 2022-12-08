@@ -1,5 +1,5 @@
 # Pirmas-Projektas
-## V 1.5
+## V 2.0
 C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 Šioje versijoje nauja: 
@@ -18,6 +18,8 @@ Jei pasirenkate negeneruoti failo prašoma:
     - Įvesti norimo sugeneruoti pažymių skaičių
 - Pasirinkti ar galutinį balą skaičiuoti pagal vidurkį ar medianą
 
+### Įdiegimo instrukcija
+   
 ### Reikalavimai įvedimui:
 - Įvedant studentų skaičių, pažymių skaičių, egzamino balą nepriimamos raidės ar simbolių reikšmės
 - Nepriimami kiti atsakymai nei pateikia dviejų pasirinkimų klausimas 
@@ -25,7 +27,7 @@ Jei pasirenkate negeneruoti failo prašoma:
     - Leidžiama tik 'v' ar 'm' renkantis vidurkį/medianą
     - Leidžiama tik 'a' ar 'p' renkantis naudotojo/atsitiktinį pažymių suvedimą
 
-### Sparta analizė
+### Spartos analizė
 - AMD Ryzen 7 4800U with Radeon Graphics 1.80 GHz procesorius
 - 16,0 GB RAM
 - 1 TB SSD
