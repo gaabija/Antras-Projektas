@@ -27,11 +27,11 @@ private:
     int egzas_;
     double galut_;
 public:
-    Studentas() : egzas_(0) {}; // default konstruktorius
+    Studentas() : egzas_(0) {};
     Studentas(ifstream& fd);
-    string vardas() const { return vardas_;} // get'eriai, inline
+    string vardas() const { return vardas_;}
     void setVardas(string &v) { vardas_ = v; }
-    string pavarde() const { return pavarde_;}// get'eriai, inline
+    string pavarde() const { return pavarde_;}
     void setPavarde(string &p) { pavarde_ = p; }
     auto pazymiai() const { return pazymiai_;}
     void setPazymiai(vector <int> &n) { pazymiai_ = n; }
@@ -40,7 +40,7 @@ public:
     auto galut() const { return galut_;}
     void setGalut(double &g) { galut_ = g; }
     void Galutinis(char budasIsvesti);
-    void readStudentas(ifstream&); // set'eriai
+    void readStudentas(ifstream&); 
     double Vidurkis();
     double Mediana();
     
