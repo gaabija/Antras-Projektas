@@ -19,7 +19,11 @@ Jei pasirenkate negeneruoti failo prašoma:
 - Pasirinkti ar galutinį balą skaičiuoti pagal vidurkį ar medianą
 
 ### Įdiegimo instrukcija
-   
+- Atsisiųsti, išsiarchyvuoti source zip aplanką
+- Terminale paleisti :
+    - g++ -o main projektas.cpp
+    - ./main
+
 ### Reikalavimai įvedimui:
 - Įvedant studentų skaičių, pažymių skaičių, egzamino balą nepriimamos raidės ar simbolių reikšmės
 - Nepriimami kiti atsakymai nei pateikia dviejų pasirinkimų klausimas 
