@@ -1,5 +1,14 @@
+/**
+ *  @file funkcijosClass.cpp
+ * Pagrindines funkcijos reikalingos programos veikimui
+ */
 #include "funkcijosClass.h"
 
+
+/**
+ * DuomenysClass funkcija yra pagalbine funkcija nedirbant su failais
+ * Joje atliekami klausimai naudotojui, informacija perduodama DuomenuGavimas ir Spausdinimas funkcijoms 
+ */
 void DuomenysClass(vector<Studentas> studentai) {
   int nStudentu;
   char budasIsvesti;
@@ -35,11 +44,22 @@ void DuomenysClass(vector<Studentas> studentai) {
   }
 }
 
+/**
+ * SpausdinimasCL yra funkcija nedirbant su failais
+ * Ji atlieka studento duomenu spausdinima i eilute
+ */
+/// @brief Studento duomenu spausdinimas i eilute
+/// @param temp 
 void SpausdinimasCl(Studentas &temp) {
   cout << endl;
   printf("%10s %10s %20.2f\n ", temp.vardas().c_str(), temp.pavarde().c_str(),
          temp.galut());
 }
+
+/**
+ * NefailoDuomenuGavimasClass yra funkcija nedirbant su failais
+ * Ji atsakinga uz vartotojo duomenu apie studentus surinkima
+ */
 void NefailoDuomenuGavimasClass(Studentas &temp) {
   cout << "Iveskite varda: ";
   string v;
@@ -67,6 +87,10 @@ void NefailoDuomenuGavimasClass(Studentas &temp) {
   }
 }
 
+/**
+ * NaudotojoSuvedimasClass yra funkcija nedirbant su failais
+ * Ji atsakinga uz vartotojo pazymiu suvedima ranka
+ */
 void NaudotojoSuvedimasClass(Studentas &temp) {
   cout << "Iveskite namų darbų ivertinimus (desimtbaleje sistemoje) "
           "paspausdami Enter, kai baigsite iveskite 0 ir Enter "
@@ -103,6 +127,11 @@ void NaudotojoSuvedimasClass(Studentas &temp) {
   }
 }
 
+/**
+ * RandomSuvedimasClass yra funkcija nedirbant su failais
+ * Ji atsakinga uz atsitiktini pazymiu generavima studentui
+ */
+
 void RandomSuvedimasClass(Studentas &temp) {
   cout << "Iveskite kiek namu darbu pazymiu sugeneruoti: ";
   int npaz;
@@ -121,6 +150,9 @@ void RandomSuvedimasClass(Studentas &temp) {
   cout << "Sugeneruotas egzamino ivertinimas: " << temp.egzas() << endl;
 }
 
+/**
+ * LyginimasClass yra funkcija atsakinga uz studentu rusiavimui didejimo reikalinga palyginimo operacija 
+ */
 bool LyginimasClass(Studentas &a, Studentas &b) { return a.vardas() < b.vardas(); }
 
 void PagalbineClass(char ar, char budasIsvesti,  int nStudentu) {
@@ -138,7 +170,10 @@ void PagalbineClass(char ar, char budasIsvesti,  int nStudentu) {
     cout << endl;
 }
 
-
+/**
+ * DuomenuGeneravimasClass yra funkcija atsakinga uz duomenu failo sugeneravima
+ * Jai veikti reikalingi studentu ir pazymiu skaiciai
+ */
 void DuomenuGeneravimasClass(int &nStudentu, int &nPazymiu) {
   string name = "Studentai" + to_string(nStudentu) + ".txt";
   ofstream studFile(name);
@@ -152,6 +187,9 @@ void DuomenuGeneravimasClass(int &nStudentu, int &nPazymiu) {
   }
 }
 
+/**
+ * FailoDuomenuGavimasClass yra funkcija atsakinga uz duomenu is studentu failo pasiemima
+ */
 void FailoDuomenuGavimasClass(vector<Studentas> &studentai, int nStudentu) {
   auto start = std::chrono::high_resolution_clock::now();
   auto startas = start;
@@ -190,12 +228,21 @@ void FailoDuomenuGavimasClass(vector<Studentas> &studentai, int nStudentu) {
   cout << to_string(nStudentu)
        << " irasu nuskaitymo laikas su Class: " << diff.count() << " s\n";
 }
+
+/**
+ * SkaiciavimasClass yra funkcija atsakinga uz galutinio balo suskaiciavima studentui
+ * Jai veikti reiklingas budo isvesti parametras
+ */
 void SkaiciavimasClass( vector<Studentas> &studentai, char budasIsvesti){
   for (auto &i : studentai){
     i.Galutinis(budasIsvesti);
   }
 }
 
+/**
+ * GrupavimasClass funkcija sugrupuoja is failo gautus studentu duomenis pagal pazymius
+ * Studentai <5 priskiriami zemesnioBalo, >5 geresnio balo vektoriui
+ */
 void GrupavimasClass(int nStudentu, vector<Studentas> &studentai,
                       vector<Studentas> &geresnioBalo,
                       vector<Studentas> &zemesnioBalo) {
@@ -218,6 +265,10 @@ void GrupavimasClass(int nStudentu, vector<Studentas> &studentai,
        << " irasu grupavimo laikas su Class: " << diff.count() << " s\n";
 }
 
+/**
+ * GrupavimasClass funkcija isspausdina i failus duomenis is sugrupuotu ir surusiuotu vektoriu
+ * Kur studentai <5 zemesnioBalo spausdinami i ZemesnioBaloClass, o >5 GeresnioBaloClass failus
+ */
 void SpausdinimasClass(int nStudentu, vector<Studentas> &geresnioBalo,
                         vector<Studentas> &zemesnioBalo) {
   string zemesniuName = "ZemesnioBaloClass" + to_string(nStudentu) + ".txt";
@@ -236,6 +287,10 @@ void SpausdinimasClass(int nStudentu, vector<Studentas> &geresnioBalo,
   geresnioBalo.clear();
 }
 
+/**
+ * SkIvedimasClass funkcija atsakinga uz skaiciaus teisingu formatu ivedima
+ * Reikalinga tam kad vietose kur reikalingas skaicius nebutu priimama raide ar simbolis ir nekiltu error
+ */
 int SkIvedimasClass() {
   int sk;
   cin >> sk;
