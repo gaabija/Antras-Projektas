@@ -1,7 +1,11 @@
 
 #include "funkcijosClass.h"
 #include "irasasClass.h"
-
+#include "funkcijosClass.cpp"
+#include "irasasClass.cpp"
+/**
+ * Main funkcija atliekanti pagrindinius klausimus vartotojui 
+ */
 int main() {
   
   cout << "Iveskite f jeigu norite dirbti su failu arba n jei norite studentus ivesti patys: " << endl;;
