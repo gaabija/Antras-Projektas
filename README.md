@@ -1,4 +1,4 @@
-# Pirmas-Projektas
+# Antras-Projektas
 ## V 2.0
 C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
