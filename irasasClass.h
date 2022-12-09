@@ -20,6 +20,7 @@ public:
     ~Zmogus() {};
     virtual string vardas() const = 0;
     virtual string pavarde() const = 0;
+    virtual void metodas() =0; //kad negaletum sukurt
 };
 
 
@@ -30,6 +31,7 @@ private:
     int egzas_;
     double galut_;
 public:
+    virtual void metodas() {};
     Studentas() : egzas_(0) {}; // default konstruktorius
     Studentas(ifstream& fd);
     string vardas() const { return vardas_;} 
@@ -38,9 +40,9 @@ public:
     void setPavarde(string &p) { pavarde_ = p; }
     auto pazymiai() const { return pazymiai_;}
     void setPazymiai(vector <int> &n) { pazymiai_ = n; }
-    auto egzas() const { return egzas_;}
-    void setEgzas(int &eg) { egzas_ = eg; }
-    auto galut() const { return galut_;}
+    auto egzas() { return egzas_;}
+    void setEgzas(int eg) { egzas_ = eg; }
+    auto galut() { return galut_;}
     void setGalut(double &g) { galut_ = g; }
     void Galutinis(char budasIsvesti);
     void readStudentas(ifstream&); 
