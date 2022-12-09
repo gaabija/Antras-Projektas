@@ -3,7 +3,7 @@
 C++ programa skirta išvesti galutinius balus norimam studentų skaičiui.
 
 Šioje versijoje nauja: 
-- Sukurta Žmogus bazinė klasė iš kurios išvedama Studentas klasė
+- Sukurta dokumentacija panaudojant Doxygen
 
 ### Naudojimas:
 Paleidus programą bus prašoma:
@@ -54,7 +54,7 @@ Sparta naudojant vieną fiksuotą konteinerį vektorių, greičiausią dalijimo 
 
 ## Versijos:
 ### v2.0
-- Sukurkite dokumentaciją panaudojant Doxygen
+- Sukurta dokumentacija panaudojant Doxygen
 ### v1.5
 - Sukurta Žmogus bazinė klasė iš kurios išvedama Studentas klasė
 ### v1.2
